@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ski Loop Recorder</title>
+  <style>
+    html, body { margin: 0; background: #0b1a33; color: #fff; font: 14px -apple-system, BlinkMacSystemFont, sans-serif; }
+    canvas { display: block; width: 100%; height: auto; }
+    .bar { display: flex; gap: 12px; align-items: center; padding: 12px 16px; flex-wrap: wrap; }
+    button { font: inherit; padding: 8px 14px; border-radius: 8px; border: 0; background: #fff; color: #0b1a33; cursor: pointer; }
+    button:disabled { opacity: 0.5; cursor: default; }
+  </style>
+  <script type="importmap">
+    { "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+        "mp4-muxer": "https://cdn.jsdelivr.net/npm/mp4-muxer@5.2.1/build/mp4-muxer.mjs"
+    } }
+  </script>
+</head>
+<body>
+  <div class="bar">
+    <button id="record" disabled>Export 10s loop video (MP4)</button>
+    <span id="status">Loading…</span>
+  </div>
+  <script type="module" src="./record.js"></script>
+</body>
+</html>

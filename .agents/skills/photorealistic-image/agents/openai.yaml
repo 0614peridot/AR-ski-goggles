@@ -1,0 +1,15 @@
+interface:
+  display_name: "Photorealistic Image with Kling"
+  short_description: "Generate realistic images and ski POV scenes with Kling"
+  default_prompt: "Use $photorealistic-image to generate a physically believable photo with Kling MCP."
+
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "kling"
+      description: "Kling AI image generation MCP server"
+      transport: "streamable_http"
+      url: "https://kling.ai/mcp"
+
+policy:
+  allow_implicit_invocation: true
